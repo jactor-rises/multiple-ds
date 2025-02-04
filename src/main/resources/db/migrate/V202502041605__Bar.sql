@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS OP_OPPSUM_DIFF
+(
+    bar_id  UUID PRIMARY KEY UNIQUE,
+    foo_id  UUID      NOT NULL,
+    created TIMESTAMP NOT NULL,
+    updated TIMESTAMP NOT NULL
+);

@@ -1,7 +1,8 @@
 # multiple-ds
 Test to setup multiple postgres datasources
 
-main branch contains one datasource
+* main branch contains one datasource
+* feature/multiple-ds contains two datasources, work in progress: is now failing
 
 run `./gradlew clean build` to build the application
 

@@ -15,7 +15,6 @@ interface FooEntityRepository : JpaRepository<FooEntity, UUID>
 class FooEntity(
     @Id @Column(name = "foo_id") internal var fooId: UUID = UUID.randomUUID(),
 ) {
-
     @Column(name = "bar_id")
     internal var barId: UUID? = null
 

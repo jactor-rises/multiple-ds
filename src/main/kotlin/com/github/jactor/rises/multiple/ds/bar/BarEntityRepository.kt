@@ -11,7 +11,7 @@ import jakarta.persistence.Table
 interface BarEntityRepository : JpaRepository<BarEntity, UUID>
 
 @Entity
-@Table(name = "FOO")
+@Table(name = "BAR")
 class BarEntity(
     @Id @Column(name = "foo_id") internal var barId: UUID = UUID.randomUUID(),
 ) {

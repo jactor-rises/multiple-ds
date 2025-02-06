@@ -3,16 +3,19 @@ package com.github.jactor.rises.multiple.ds.foo
 import java.util.UUID
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.test.context.SpringBootTest
+import com.github.jactor.rises.multiple.ds.util.flushAndClearCache
 import assertk.assertAll
 import assertk.assertThat
 import assertk.assertions.isEqualTo
 import assertk.assertions.isNotEqualTo
-import com.github.jactor.rises.multiple.ds.util.flushAndClearCache
-import jakarta.persistence.EntityManager
-import jakarta.transaction.Transactional
-import org.springframework.boot.test.context.SpringBootTest
 import assertk.assertions.isNotNull
 import assertk.assertions.isNull
+import io.github.oshai.kotlinlogging.KotlinLogging
+import jakarta.persistence.EntityManager
+import jakarta.transaction.Transactional
+
+private val logger = KotlinLogging.logger {}
 
 @Transactional
 @SpringBootTest
@@ -22,6 +25,10 @@ class FooEntityRepositoryTest {
 
     @Autowired
     private lateinit var fooEntityRepository: FooEntityRepository
+
+    init {
+        logger.info { ">>> starting FooEntityRepositoryTest" }
+    }
 
     @Test
     fun `should update entity`() {

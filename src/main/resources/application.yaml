@@ -1,3 +1,13 @@
 spring:
     application:
         name: multiple-ds
+    datasource:
+        url: jdbc:postgresql://localhost:5432/internal-database
+        username: postgres
+    flyway:
+        locations: classpath:db
+
+external-database:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/external-database
+        username: postgres

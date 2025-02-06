@@ -13,6 +13,9 @@ import jakarta.transaction.Transactional
 import org.springframework.boot.test.context.SpringBootTest
 import assertk.assertions.isNotNull
 import assertk.assertions.isNull
+import io.github.oshai.kotlinlogging.KotlinLogging
+
+private val logger = KotlinLogging.logger {}
 
 @Transactional
 @SpringBootTest
@@ -22,6 +25,10 @@ class BarEntityRepositoryTest {
 
     @Autowired
     private lateinit var barEntityRepository: BarEntityRepository
+
+    init {
+        logger.info { ">>> starting BarEntityRepositoryTest" }
+    }
 
     @Test
     fun `should update entity`() {
@@ -47,7 +54,7 @@ class BarEntityRepositoryTest {
 
         assertAll {
             assertThat(updated.fooId, "updated.fooId").isEqualTo(newFooId)
-            assertThat(updated.fooId, "updateed.fooId vs. bar.fooId").isNotEqualTo(bar.fooId)
+            assertThat(updated.fooId, "updated.fooId vs. bar.fooId").isNotEqualTo(bar.fooId)
             assertThat(updated.updated, "updated.updated vs. created.updated").isNotEqualTo(created.updated)
         }
     }

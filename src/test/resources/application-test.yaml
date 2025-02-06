@@ -1,9 +1,18 @@
 spring:
     datasource:
-        url: jdbc:postgresql://localhost:5432/testdb
+        url: jdbc:postgresql://localhost:5432/postgres
         driver-class-name: org.postgresql.Driver
         username: postgres
+        password: postgres
     jpa:
         hibernate:
-            ddl-auto: update
+            ddl-auto: validate
         show-sql: true
+    main:
+        allow-bean-definition-overriding: true
+
+external-database:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/external-database
+        username: postgres
+        password: postgres

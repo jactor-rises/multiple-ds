@@ -29,7 +29,7 @@ class FooEntityRepositoryTest {
         val fooEntity = foo.toEntity()
 
         assertThat(foo.fooId, "foo.fooId").isNull()
-        assertThat(fooEntity.fooId, "barEntity.fooId").isNotNull()
+        assertThat(fooEntity.fooId, "fooEntity.fooId").isNotNull()
 
         val created = fooEntityRepository.save(fooEntity)
         entityManager.flushAndClearCache()
@@ -47,7 +47,7 @@ class FooEntityRepositoryTest {
 
         assertAll {
             assertThat(updated.barId, "updated.barId").isEqualTo(newBarId)
-            assertThat(updated.barId, "updateed.barId vs. foo.fooId").isNotEqualTo(foo.barId)
+            assertThat(updated.barId, "updated.barId vs. foo.barId").isNotEqualTo(foo.barId)
             assertThat(updated.updated, "updated.updated vs. created.updated").isNotEqualTo(created.updated)
         }
     }

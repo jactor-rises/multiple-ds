@@ -13,10 +13,9 @@ interface BarEntityRepository : JpaRepository<BarEntity, UUID>
 @Entity
 @Table(name = "BAR")
 class BarEntity(
-    @Id @Column(name = "foo_id") internal var barId: UUID = UUID.randomUUID(),
+    @Id @Column(name = "bar_id") internal var barId: UUID = UUID.randomUUID(),
 ) {
-
-    @Column(name = "bar_id")
+    @Column(name = "foo_id")
     internal var fooId: UUID? = null
 
     @Column(name = "created", updatable = false)

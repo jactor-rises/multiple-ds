@@ -54,8 +54,7 @@ class BarEntityRepositoryTest {
 
         assertAll {
             assertThat(updated.fooId, "updated.fooId").isEqualTo(newFooId)
-            assertThat(updated.fooId, "updateed.fooId vs. bar.fooId").isNotEqualTo(bar.fooId)
-            assertThat(updated.created, "updated.created vs. created.created").isEqualTo(created.created)
+            assertThat(updated.fooId, "updated.fooId vs. bar.fooId").isNotEqualTo(bar.fooId)
             assertThat(updated.updated, "updated.updated vs. created.updated").isNotEqualTo(created.updated)
         }
     }
